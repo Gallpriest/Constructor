@@ -1,0 +1,7 @@
+.questionnaire {
+  display: flex;
+  flex: 1;
+  padding: var(--big);
+  margin: var(--big);
+  border: 1px solid var(--light-border);
+}

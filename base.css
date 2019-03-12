@@ -1,0 +1,36 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Dosis', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: var(--text-main);
+  background: var(--body);
+}
+
+#app {
+  display: flex;
+}
+
+:root {
+  /* size */
+  --big: 20px;
+  --medium: 15px;
+  --small: 10px;
+
+  /* colors */
+  --body: #f0f0f0;
+  --peachy: #ff855d;
+  --light-border: #cccccc;
+  --blue: #0c7cec;
+  --light-blue: #0fbcf9;
+  --dark-blue: #273c75;
+  --text-main: #333333;
+  --text-content: #353b48;
+
+  /* default parameters */
+
+}

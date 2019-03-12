@@ -1,0 +1,8 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--light-border);
+    width: 100%;
+    padding: var(--big);
+    background: #fff;
+}

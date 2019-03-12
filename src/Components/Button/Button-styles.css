@@ -1,0 +1,13 @@
+.button {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  height: 40px;
+  padding: 0 25px;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  background: var(--blue);
+  outline: none;
+  border: 0;
+}

@@ -1,0 +1,28 @@
+.type {
+    cursor: pointer;
+    width: 33.3%;
+    margin: -1px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-main);
+    border: 1px solid var(--light-border);
+    font-size: 14px;
+    line-height: 14px;
+    text-transform: uppercase;
+    background: #fff;
+    transition: all 0.15s ease-in-out;
+}
+
+.type:hover {
+    background: var(--peachy);
+    border: 1px solid var(--peachy);
+    color: #fff;
+}
+
+.type_active {
+    background: var(--peachy);
+    border: 1px solid var(--peachy);
+    color: #fff;
+}

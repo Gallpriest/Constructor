@@ -1,0 +1,20 @@
+.options {
+    width: 100%;
+    height: auto;
+}
+
+.options__title {
+    font-size: 16px;
+    text-align: left;
+    font-weight: bold;
+    color: var(--text-content);
+    margin: 0 0 var(--big);
+    text-transform: uppercase;
+}
+
+.options__filter {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
