@@ -17,8 +17,12 @@ class Parameters extends React.Component {
     }
 
     handleClickAddInput = () => {
-        let inputAdded = true;
-        this.props.handleClickAddInput(inputAdded);
+        if (this.state.inputSettings.name !== null) {
+            let inputAdded = true;
+            this.props.handleClickAddInput(inputAdded);
+        } else {
+            alert('Please, fill the parameters')
+        }
     }
 
     handleSettings = (name, placeholder) => {
@@ -38,7 +42,7 @@ class Parameters extends React.Component {
         const { type } = this.props;
         const paramsTitle = 'Please, add required parameters:'
         const paramsClassNames = type !== null ? `${styles.parameters} ${styles.parameters_active}` : styles.parameters;
-        const saveButton = <Button 
+        const saveButton = <Button
                                 name="Add"
                                 type="button"
                                 onClick={this.handleClickAddInput}
@@ -57,10 +61,10 @@ class Parameters extends React.Component {
                 break;
             case 'textarea':
 
-                break; 
+                break;
             case 'select':
 
-                break; 
+                break;
             case 'file':
 
                 break;

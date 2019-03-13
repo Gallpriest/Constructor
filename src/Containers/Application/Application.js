@@ -22,10 +22,6 @@ class Application extends React.Component {
     this.setState({ newInput: inputType });
   }
 
-  componentDidUpdate = () => {
-    console.log(this.state.inputsArray);
-  }
-
   transferPrametersData = (inputData) => {
     this.setState({
       newInput: {
@@ -41,6 +37,11 @@ class Application extends React.Component {
       let addedInput = this.state.newInput;
       this.setState(prevState => ({
         inputsArray: prevState.inputsArray.concat(addedInput),
+        newInput: {
+          type: null,
+          name: null,
+          placeholder: null
+        }
       }));
     }
   }

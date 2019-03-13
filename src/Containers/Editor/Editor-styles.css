@@ -1,5 +1,5 @@
 .editor {
-  display: flex;
+  display: inline-block;
   flex: 1;
   margin: var(--big);
 }

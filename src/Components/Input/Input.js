@@ -43,12 +43,13 @@ class Input extends React.Component {
 
         return (
             <label className={classNameInput}>
-                <div> { name } </div>
-                <span></span>
                 <input
                     type={type}
+                    name={name}
                     placeholder={placeholder}
                 />
+                <span></span>
+                <div> { name } </div>
             </label>
 
         )

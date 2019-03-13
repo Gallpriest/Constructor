@@ -23,6 +23,7 @@ class Options extends React.Component {
     }
 
     handleClickAddInput = (added) => {
+        this.setState({ isChosen: null })
         this.props.handleClickAddInput(added);
     }
 
@@ -36,14 +37,14 @@ class Options extends React.Component {
             { type: 'file' }
         ];
         const title = 'Please, choose one of input types:';
-        const typesFilter = dataTypes.map(item => <Type 
-                                                key={item.type} 
-                                                typeName={item.type} 
+        const typesFilter = dataTypes.map(item => <Type
+                                                key={item.type}
+                                                typeName={item.type}
                                                 isChosen={this.state.isChosen}
                                                 handleTypeIsChosen={this.handleTypeIsChosen}
                                             />);
-        const params = <Parameters 
-                            type={this.state.isChosen} 
+        const params = <Parameters
+                            type={this.state.isChosen}
                             transferPrametersData={this.transferPrametersData}
                             handleClickAddInput={this.handleClickAddInput}
                         />
