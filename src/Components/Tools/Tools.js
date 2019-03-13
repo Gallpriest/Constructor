@@ -8,12 +8,22 @@ class Tools extends React.Component {
     this.props.handleInputType(type);
   }
 
+  transferPrametersData = (inputData) => {
+    this.props.transferPrametersData(inputData)
+  }
+
+  handleClickAddInput = (added) => {
+    this.props.handleClickAddInput(added);
+  }
+
   render() {
     return (
       <div className={styles.tools}>
         <div className={styles.tools__options}>
           <Options 
             handleInputType={this.handleInputType} 
+            transferPrametersData={this.transferPrametersData}
+            handleClickAddInput={this.handleClickAddInput}
           />
         </div>
       </div>

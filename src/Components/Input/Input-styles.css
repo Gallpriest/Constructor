@@ -1,8 +1,37 @@
 /* input text */
 .input__text {
-
+    width: 100%;
+    margin-bottom: var(--medium);
+    display: flex;
+    flex-direction: column;
 }
 
+.input__text input {
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    border: solid 1px #e8e8e8;
+    font-size: 14px;
+    color: #383e44;
+    outline: none;
+    box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.1);
+}
+
+.input__text span {
+    width: 0;
+    height: 0;
+    font-size: 0;
+}
+
+.input__text div {
+    margin-bottom: var(--small);
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* input checkbox */
 .input__checkbox {
 
 }
@@ -21,4 +50,9 @@
 
 .input__file {
     
+}
+
+/* input hidden by default */
+.input__hidden {
+    display: none;
 }

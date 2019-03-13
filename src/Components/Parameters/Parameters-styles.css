@@ -1,0 +1,23 @@
+.parameters {
+    display: none;
+    width: 100%;
+    margin-top: var(--big);
+}
+
+.parameters_active {
+    display: block;
+}
+
+.parameters__title {
+    font-size: 16px;
+    text-align: left;
+    font-weight: bold;
+    color: var(--text-content);
+    margin: 0 0 var(--big);
+    text-transform: uppercase;
+}
+
+.parameters__button {
+    text-align: right;
+    margin-top: var(--big);
+}

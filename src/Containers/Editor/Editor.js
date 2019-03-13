@@ -8,11 +8,21 @@ class Editor extends React.Component {
     this.props.handleInputType(type);
   }
 
+  transferPrametersData = (inputData) => {
+    this.props.transferPrametersData(inputData)
+  }
+
+  handleClickAddInput = (added) => {
+    this.props.handleClickAddInput(added);
+  }
+
   render() {
     return (
       <section className={styles.editor}>
         <Tools 
           handleInputType={this.handleInputType} 
+          transferPrametersData={this.transferPrametersData}
+          handleClickAddInput={this.handleClickAddInput}
         />
       </section>
     )

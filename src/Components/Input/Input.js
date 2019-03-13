@@ -10,8 +10,10 @@ class Input extends React.Component {
 
         const { 
             type,
-            name 
+            name,
+            placeholder
         } = this.props;
+
 
         let classNameInput = '';
 
@@ -35,16 +37,18 @@ class Input extends React.Component {
                 classNameInput += styles.input__file;
                 break;
             default:
+                classNameInput +=styles.input__hidden;
                 break;
         }
 
         return (
             <label className={classNameInput}>
+                <div> { name } </div>
                 <span></span>
                 <input
                     type={type}
+                    placeholder={placeholder}
                 />
-                { name }
             </label>
 
         )

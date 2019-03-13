@@ -17,6 +17,7 @@ class Button extends React.Component {
     
     return (
       <button 
+        type={type}
         onClick={onClick}
         className={styles.button}>
         { name }

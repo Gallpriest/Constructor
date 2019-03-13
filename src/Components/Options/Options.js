@@ -18,6 +18,14 @@ class Options extends React.Component {
         this.props.handleInputType(inputType);
     }
 
+    transferPrametersData = (inputData) => {
+        this.props.transferPrametersData(inputData)
+    }
+
+    handleClickAddInput = (added) => {
+        this.props.handleClickAddInput(added);
+    }
+
     render() {
         const dataTypes = [
             { type: 'input' },
@@ -34,7 +42,11 @@ class Options extends React.Component {
                                                 isChosen={this.state.isChosen}
                                                 handleTypeIsChosen={this.handleTypeIsChosen}
                                             />);
-        const params = <Parameters type={this.state.isChosen} />
+        const params = <Parameters 
+                            type={this.state.isChosen} 
+                            transferPrametersData={this.transferPrametersData}
+                            handleClickAddInput={this.handleClickAddInput}
+                        />
 
         return (
             <div className={styles.options}>

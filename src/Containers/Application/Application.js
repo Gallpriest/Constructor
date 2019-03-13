@@ -10,7 +10,8 @@ class Application extends React.Component {
     this.state = {
       newInput: {
         type: null,
-        name: null
+        name: null,
+        placeholder: null
       },
       inputsArray: []
     }
@@ -22,18 +23,39 @@ class Application extends React.Component {
   }
 
   componentDidUpdate = () => {
-    console.log(this.state.newInput);
+    console.log(this.state.inputsArray);
+  }
+
+  transferPrametersData = (inputData) => {
+    this.setState({
+      newInput: {
+        type: this.state.newInput.type,
+        name: inputData.name,
+        placeholder: inputData.placeholder
+      }
+    });
+  }
+
+  handleClickAddInput = (added) => {
+    if (added) {
+      let addedInput = this.state.newInput;
+      this.setState(prevState => ({
+        inputsArray: prevState.inputsArray.concat(addedInput),
+      }));
+    }
   }
 
   render() {
-    let type = this.state.newInput.type;
     return (
       <div className={styles.application}>
         <Editor
           handleInputType={this.handleInputType} 
+          transferPrametersData={this.transferPrametersData}
+          handleClickAddInput={this.handleClickAddInput}
         />
         <Questionnaire
-          type={type} 
+          inputDataFlow={this.state.newInput}
+          inputsCollection={this.state.inputsArray}
         />
       </div>
     )

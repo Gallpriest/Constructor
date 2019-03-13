@@ -4,10 +4,11 @@
   position: relative;
   height: 40px;
   padding: 0 25px;
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 1;
   text-align: center;
   color: #fff;
-  background: var(--blue);
+  background: var(--peachy);
   outline: none;
   border: 0;
 }
