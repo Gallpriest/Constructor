@@ -11,7 +11,9 @@ class Application extends React.Component {
       newInput: {
         type: null,
         name: null,
-        placeholder: null
+        placeholder: null,
+        numberOptions: null,
+        options: []
       },
       inputsArray: []
     }

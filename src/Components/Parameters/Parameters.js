@@ -2,7 +2,9 @@ import React from 'react';
 import styles from './Parameters-styles.css';
 import Button from '../Button/Button';
 import ParameterInput from './ParameterInput/ParameterInput';
+import ParameterSelect from './ParameterSelect/ParameterSelect';
 import ParameterCheckbox from './ParameterCheckbox/ParameterCheckbox';
+
 
 class Parameters extends React.Component {
     constructor(props) {
@@ -20,16 +22,26 @@ class Parameters extends React.Component {
         if (this.state.inputSettings.name !== null) {
             let inputAdded = true;
             this.props.handleClickAddInput(inputAdded);
+            this.setState({
+                inputSettings: {
+                    name: null,
+                    placeholder: null,
+                    numberOptions: null,
+                    options: []
+                }
+            })
         } else {
             alert('Please, fill the parameters')
         }
     }
 
-    handleSettings = (name, placeholder) => {
+    handleSettings = (name, placeholder, numberOptions, options) => {
         this.setState({
             inputSettings: {
                 name: name,
-                placeholder: placeholder
+                placeholder: placeholder,
+                numberOptions: null,
+                options: options
             }
         }, () => {
             let inputObject = this.state.inputSettings
@@ -63,7 +75,7 @@ class Parameters extends React.Component {
 
                 break;
             case 'select':
-
+                chosenParameter = <ParameterSelect handleSettings={this.handleSettings} />;
                 break;
             case 'file':
 
