@@ -2,12 +2,14 @@ import React from 'react';
 import styles from './ParameterSelect-styles.css';
 
 
-function RenderInput(index, method) {
+function RenderInput(props) {
+  const handleBlur = (event) => {
+    props.onBlur(props.index, event.target.value)
+  }
   return (
     <input
-      key={index}
-      id={index}
-      onBlur={method}
+      id={props.index}
+      onBlur={handleBlur}
       className={styles.parameter__field_input_option}
       type="text"
     />
@@ -24,50 +26,23 @@ class ParameterSelect extends React.Component {
       options: []
     }
   }
-
   componentDidUpdate = () => {
-    console.log(this.state.options)
+    console.log(this.state.options);
   }
 
-  handleOption = (event) => {
-    let optionName = event.target.value;
-    let inputID = event.target.getAttribute('id');
-    let optionsArray = [];
-    optionsArray.concat(this.state.options);
-
-    console.log(optionsArray);
-    let counter = this.state.numberOptions;
-    let newOption = {
-      id: inputID,
-      name: optionName
-    };
-
-    if (optionsArray.length > 0) {
-      console.log('true');
-      for (let i = 0; i < counter; i++) {
-        console.log(optionsArray[i].id);
-        console.log(newOption.id);
-        if (optionsArray[i].id === newOption.id) {
-          optionsArray[i].name = newOption.name;
-        } else {
-          optionsArray.push(optionName);
-          return;
-        }
-      }
-    } else {
-      console.log('false');
-      optionsArray.push(optionName);
-    }
-
+  handleOption = (index, value) => {
+    const options = [...this.state.options];
+    options[index] = value;
     this.setState({
-      options: this.state.options.concat(optionsArray) 
-    });
+      options
+    })
   }
 
   handleSelectName = (event) => {
     let value = event.target.value;
-    this.setState({ name: value });
-    this.props.handleSettings(value);
+    this.setState({ name: value }, () => {
+      this.props.handleSettings(this.state);
+    });
   }
 
   handleAmountOptions = (event) => {
@@ -79,7 +54,7 @@ class ParameterSelect extends React.Component {
     const numberOfOptions = this.state.numberOptions;
     let optionsNumberArray = [];
     for (let i = 0; i < numberOfOptions; i++) {
-      optionsNumberArray.push(RenderInput(i, this.handleOption));
+      optionsNumberArray.push(<RenderInput key={i} index={i} onBlur={this.handleOption}/>);
     }
 
     return (

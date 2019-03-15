@@ -1,10 +1,12 @@
 import React from 'react';
 import styles from './Parameters-styles.css';
 import Button from '../Button/Button';
+import ParameterFile from './ParameterFile/ParameterFile';
 import ParameterInput from './ParameterInput/ParameterInput';
 import ParameterSelect from './ParameterSelect/ParameterSelect';
 import ParameterCheckbox from './ParameterCheckbox/ParameterCheckbox';
-
+import ParameterRadio from './ParameterRadio/ParameterRadio';
+import ParameterTextarea from './ParameterTextarea/ParameterTextarea';
 
 class Parameters extends React.Component {
     constructor(props) {
@@ -27,7 +29,8 @@ class Parameters extends React.Component {
                     name: null,
                     placeholder: null,
                     numberOptions: null,
-                    options: []
+                    options: [],
+                    category: null
                 }
             })
         } else {
@@ -35,13 +38,14 @@ class Parameters extends React.Component {
         }
     }
 
-    handleSettings = (name, placeholder, numberOptions, options) => {
+    handleSettings = (obj) => {
         this.setState({
             inputSettings: {
-                name: name,
-                placeholder: placeholder,
-                numberOptions: null,
-                options: options
+                name: obj.name,
+                placeholder: obj.placeholder,
+                numberOptions: obj.numberOptions,
+                options: obj.options,
+                category: obj.category
             }
         }, () => {
             let inputObject = this.state.inputSettings
@@ -69,16 +73,16 @@ class Parameters extends React.Component {
                 chosenParameter = <ParameterCheckbox handleSettings={this.handleSettings} />;
                 break;
             case 'radio':
-
+                chosenParameter = <ParameterRadio handleSettings={this.handleSettings} />;
                 break;
             case 'textarea':
-
+                chosenParameter = <ParameterTextarea handleSettings={this.handleSettings} />;
                 break;
             case 'select':
                 chosenParameter = <ParameterSelect handleSettings={this.handleSettings} />;
                 break;
             case 'file':
-
+                chosenParameter = <ParameterFile handleSettings={this.handleSettings} />;
                 break;
             default:
                 chosenParameter = null;

@@ -13,7 +13,8 @@ class Application extends React.Component {
         name: null,
         placeholder: null,
         numberOptions: null,
-        options: []
+        options: [],
+        category: null
       },
       inputsArray: []
     }
@@ -25,11 +26,15 @@ class Application extends React.Component {
   }
 
   transferPrametersData = (inputData) => {
+    let name = inputData.name;
     this.setState({
       newInput: {
         type: this.state.newInput.type,
-        name: inputData.name,
-        placeholder: inputData.placeholder
+        name: name,
+        placeholder: inputData.placeholder,
+        numberOptions: inputData.numberOptions,
+        options: inputData.options,
+        category: inputData.category
       }
     });
   }
@@ -40,9 +45,11 @@ class Application extends React.Component {
       this.setState(prevState => ({
         inputsArray: prevState.inputsArray.concat(addedInput),
         newInput: {
-          type: null,
           name: null,
-          placeholder: null
+          placeholder: null,
+          numberOptions: null,
+          options: [],
+          category: null
         }
       }));
     }

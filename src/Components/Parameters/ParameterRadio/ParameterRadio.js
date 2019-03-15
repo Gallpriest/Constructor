@@ -1,26 +1,26 @@
 import React from 'react';
-import styles from './ParameterInput-styles.css';
+import styles from './ParameterRadio-styles.css';
 
-class ParameterInput extends React.Component {
+class ParameterRadio extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       name: null,
-      placeholder: null
+      category: null
     }
   }
 
-  handleInputName = (event) => {
+  handleRadioName = (event) => {
     let value = event.target.value;
     this.setState({ name: value }, () => {
       this.props.handleSettings(this.state);
     });
   }
 
-  handleInputPlaceholder = (event) => {
+  handleRadioCategory = (event) => {
     let value = event.target.value;
-    this.setState({ placeholder: value }, () => {
+    this.setState({ category: value }, () => {
       this.props.handleSettings(this.state);
     });
   }
@@ -29,19 +29,19 @@ class ParameterInput extends React.Component {
     return (
       <div className={styles.parameter__field}>
         <label className={styles.parameter__field_label}>
-          <span className={styles.parameter__field_text}>Input's name</span>
-          <input 
-            onChange={this.handleInputName}
+          <span className={styles.parameter__field_text}>Radio's name</span>
+          <input
+            onChange={this.handleRadioName}
             className={styles.parameter__field_input}
             type="text"
           />
         </label>
         <label className={styles.parameter__field_label}>
-          <span className={styles.parameter__field_text}>Input's placeholder</span>
-          <input 
-            onChange={this.handleInputPlaceholder}
+          <span className={styles.parameter__field_text}>Radio's category</span>
+          <input
+            onChange={this.handleRadioCategory}
             className={styles.parameter__field_input}
-            type="text" 
+            type="text"
           />
         </label>
       </div>
@@ -49,4 +49,4 @@ class ParameterInput extends React.Component {
   }
 }
 
-export default ParameterInput;
+export default ParameterRadio;

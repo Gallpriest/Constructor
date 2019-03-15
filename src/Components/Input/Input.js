@@ -8,14 +8,21 @@ class Input extends React.Component {
 
     render() {
 
-        const { 
+        const {
             type,
             name,
-            placeholder
+            placeholder,
+            numberOfOptions,
+            options,
+            category
         } = this.props;
 
 
         let classNameInput = '';
+        let svg = {
+            backgroundImage: 'url("./images/download.svg")'
+        }
+        let fileClassName = null;
 
         switch(type) {
             case 'input':
@@ -29,12 +36,13 @@ class Input extends React.Component {
                 break;
             case 'textarea':
                 classNameInput += styles.input__textarea;
-                break; 
+                break;
             case 'select':
                 classNameInput += styles.input__select;
-                break; 
+                break;
             case 'file':
                 classNameInput += styles.input__file;
+                fileClassName = svg;
                 break;
             default:
                 classNameInput +=styles.input__hidden;
@@ -45,10 +53,10 @@ class Input extends React.Component {
             <label className={classNameInput}>
                 <input
                     type={type}
-                    name={name}
+                    name={category}
                     placeholder={placeholder}
                 />
-                <span></span>
+                <span style={fileClassName}></span>
                 <div> { name } </div>
             </label>
 

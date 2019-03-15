@@ -12,8 +12,10 @@ class ParameterCheckbox extends React.Component {
 
   handleCheckboxName = (event) => {
     let value = event.target.value;
-    this.setState({ name: value });
-    this.props.handleSettings(value);
+    this.setState({ name: value }, () => {
+      this.props.handleSettings(this.state);
+    });
+ 
   }
 
   render() {

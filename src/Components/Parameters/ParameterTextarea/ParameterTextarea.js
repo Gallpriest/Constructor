@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './ParameterInput-styles.css';
+import styles from './ParameterTextarea-styles.css';
 
-class ParameterInput extends React.Component {
+class ParameterTextarea extends React.Component {
   constructor(props) {
     super(props);
 
@@ -11,14 +11,14 @@ class ParameterInput extends React.Component {
     }
   }
 
-  handleInputName = (event) => {
+  handleTextareaName = (event) => {
     let value = event.target.value;
     this.setState({ name: value }, () => {
       this.props.handleSettings(this.state);
     });
   }
 
-  handleInputPlaceholder = (event) => {
+  handleTextareaPlaceholder = (event) => {
     let value = event.target.value;
     this.setState({ placeholder: value }, () => {
       this.props.handleSettings(this.state);
@@ -29,19 +29,19 @@ class ParameterInput extends React.Component {
     return (
       <div className={styles.parameter__field}>
         <label className={styles.parameter__field_label}>
-          <span className={styles.parameter__field_text}>Input's name</span>
-          <input 
-            onChange={this.handleInputName}
+          <span className={styles.parameter__field_text}>Textarea name</span>
+          <input
+            onChange={this.handleTextareaName}
             className={styles.parameter__field_input}
             type="text"
           />
         </label>
         <label className={styles.parameter__field_label}>
-          <span className={styles.parameter__field_text}>Input's placeholder</span>
-          <input 
-            onChange={this.handleInputPlaceholder}
+          <span className={styles.parameter__field_text}>Textarea placeholder</span>
+          <input
+            onChange={this.handleTextareaPlaceholder}
             className={styles.parameter__field_input}
-            type="text" 
+            type="text"
           />
         </label>
       </div>
@@ -49,4 +49,4 @@ class ParameterInput extends React.Component {
   }
 }
 
-export default ParameterInput;
+export default ParameterTextarea;
