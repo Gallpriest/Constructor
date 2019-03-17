@@ -65,7 +65,8 @@ class Input extends React.Component {
             placeholder,
             numberOptions,
             options,
-            category
+            category,
+            title
         } = this.props;
 
 
@@ -91,6 +92,7 @@ class Input extends React.Component {
                                                 className={classNameInput}
                                                 type={type}
                                                 name={name}
+                                                title={title}
                                             />;
                 break;
             case 'radio':
@@ -137,6 +139,9 @@ class Input extends React.Component {
 
         return (
             <div className={styles.input__item}>
+                <div className={styles.input__title}>
+                    { title }
+                </div>
                 { renderRequiredInput }
             </div>
         )

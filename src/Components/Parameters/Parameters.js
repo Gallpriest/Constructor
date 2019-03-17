@@ -33,7 +33,8 @@ class Parameters extends React.Component {
                     placeholder: null,
                     numberOptions: null,
                     options: [],
-                    category: null
+                    category: null,
+                    title: null
                 }
             })
         } else {
@@ -48,7 +49,8 @@ class Parameters extends React.Component {
                 placeholder: obj.placeholder,
                 numberOptions: obj.numberOptions,
                 options: obj.options,
-                category: obj.category
+                category: obj.category,
+                title: obj.title
             }
         }, () => {
             let inputObject = this.state.inputSettings

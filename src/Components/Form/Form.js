@@ -12,6 +12,7 @@ class Form extends React.Component {
         let numberOptions = inputDataFlow.numberOptions;
         let options = inputDataFlow.options;
         let category = inputDataFlow.category;
+        let title = inputDataFlow.title;
 
         // dynamic input changes via editor
         let formField = inputDataFlow ? <Input
@@ -21,6 +22,7 @@ class Form extends React.Component {
                                         numberOptions={numberOptions}
                                         options={options}
                                         category={category}
+                                        title={title}
                                     /> : '';
 
         // render complete array on inputs
@@ -34,6 +36,7 @@ class Form extends React.Component {
                                                         numberOptions={input.numberOptions}
                                                         options={input.options}
                                                         category={input.category}
+                                                        title={input.title}
                                                     />)
         };
 

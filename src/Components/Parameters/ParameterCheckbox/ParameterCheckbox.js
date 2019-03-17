@@ -6,7 +6,8 @@ class ParameterCheckbox extends React.Component {
     super(props);
 
     this.state = {
-      name: null
+      name: null,
+      title: null
     }
   }
 
@@ -15,7 +16,14 @@ class ParameterCheckbox extends React.Component {
     this.setState({ name: value }, () => {
       this.props.handleSettings(this.state);
     });
- 
+  }
+
+  
+  handleCheckboxTitle = (event) => {
+    let value = event.target.value;
+    this.setState({ title: value }, () => {
+      this.props.handleSettings(this.state);
+    });
   }
 
   render() {
@@ -23,7 +31,15 @@ class ParameterCheckbox extends React.Component {
     return (
       <div className={styles.parameter__field}>
         <label className={styles.parameter__field_label}>
-            <span className={styles.parameter__field_text}>Input's name</span>
+            <span className={styles.parameter__field_text}>Checkbox title</span>
+            <input
+              onChange={this.handleCheckboxTitle}
+              className={styles.parameter__field_input}
+              type="text"
+            />
+        </label>
+        <label className={styles.parameter__field_label}>
+            <span className={styles.parameter__field_text}>Checkbox name</span>
             <input
               onChange={this.handleCheckboxName}
               className={styles.parameter__field_input}

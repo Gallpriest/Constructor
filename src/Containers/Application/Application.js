@@ -15,7 +15,8 @@ class Application extends React.Component {
         placeholder: null,
         numberOptions: null,
         options: [],
-        category: null
+        category: null,
+        title: null
       },
       inputsArray: []
     }
@@ -40,7 +41,8 @@ class Application extends React.Component {
         placeholder: inputData.placeholder,
         numberOptions: inputData.numberOptions,
         options: inputData.options,
-        category: inputData.category
+        category: inputData.category,
+        title: inputData.title
       }
     });
   }
@@ -56,7 +58,8 @@ class Application extends React.Component {
           placeholder: null,
           numberOptions: null,
           options: [],
-          category: null
+          category: null,
+          title: null
         }
       }));
     }
