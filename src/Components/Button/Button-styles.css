@@ -12,3 +12,17 @@
   outline: none;
   border: 0;
 }
+
+.button_form {
+  background: var(--green);
+}
+
+.button_form:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+  .button {
+    font-size: 14px;
+  }
+}

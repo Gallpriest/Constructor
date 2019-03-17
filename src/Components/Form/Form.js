@@ -1,14 +1,15 @@
 import React from 'react';
 import styles from './Form-styles.css';
 import Input from '../Input/Input';
+import Button from '../Button/Button';
 
 class Form extends React.Component {
     render() {
-        const { inputDataFlow, inputsCollection } = this.props;
+        const { inputDataFlow, inputsCollection, formName } = this.props;
         let type = inputDataFlow.type;
         let name = inputDataFlow.name;
         let placeholder = inputDataFlow.placeholder;
-        let numberOfOptions = inputDataFlow.numberOfOptions;
+        let numberOptions = inputDataFlow.numberOptions;
         let options = inputDataFlow.options;
         let category = inputDataFlow.category;
 
@@ -17,7 +18,7 @@ class Form extends React.Component {
                                         type={type}
                                         name={name}
                                         placeholder={placeholder}
-                                        numberOfOptions={numberOfOptions}
+                                        numberOptions={numberOptions}
                                         options={options}
                                         category={category}
                                     /> : '';
@@ -30,16 +31,29 @@ class Form extends React.Component {
                                                         type={input.type}
                                                         name={input.name}
                                                         placeholder={input.placeholder}
-                                                        numberOfOptions={input.numberOfOptions}
+                                                        numberOptions={input.numberOptions}
                                                         options={input.options}
                                                         category={input.category}
                                                     />)
-        }
+        };
+
+        let submitButton = <Button
+                            type="submit"
+                            name="Submit"
+                            variants={true}
+                        />;
+
         return (
-            <form className={styles.form}>
+            <form method='POST' action="/" className={styles.form}>
                 <div className={styles.form__wrap}>
+                    <div className={styles.form__name}>
+                    { formName }
+                    </div>
                     { allInputs }
                     { formField }
+                    <div className={styles.form__button}>
+                    { submitButton }
+                    </div>
                 </div>
             </form>
         )

@@ -16,14 +16,19 @@ class Tools extends React.Component {
     this.props.handleClickAddInput(added);
   }
 
+  handleChangeNameForm = (formName) => {
+    this.props.handleChangeNameForm(formName)
+  }
+
   render() {
     return (
       <div className={styles.tools}>
         <div className={styles.tools__options}>
-          <Options 
-            handleInputType={this.handleInputType} 
+          <Options
+            handleInputType={this.handleInputType}
             transferPrametersData={this.transferPrametersData}
             handleClickAddInput={this.handleClickAddInput}
+            handleChangeNameForm={this.handleChangeNameForm}
           />
         </div>
       </div>

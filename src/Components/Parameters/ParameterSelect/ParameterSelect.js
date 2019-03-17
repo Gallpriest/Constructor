@@ -26,15 +26,14 @@ class ParameterSelect extends React.Component {
       options: []
     }
   }
-  componentDidUpdate = () => {
-    console.log(this.state.options);
-  }
 
   handleOption = (index, value) => {
     const options = [...this.state.options];
     options[index] = value;
     this.setState({
-      options
+      options: options
+    }, () => {
+      this.props.handleSettings(this.state);
     })
   }
 
@@ -47,7 +46,9 @@ class ParameterSelect extends React.Component {
 
   handleAmountOptions = (event) => {
     let amount = event.target.value;
-    this.setState({ numberOptions: amount });
+    this.setState({ numberOptions: amount }, () => {
+      this.props.handleSettings(this.state);
+    });
   }
 
   render() {

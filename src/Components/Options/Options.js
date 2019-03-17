@@ -12,6 +12,11 @@ class Options extends React.Component {
         }
     }
 
+    handleChangeNameForm = (event) => {
+        let value = event.target.value;
+        this.props.handleChangeNameForm(value)
+      }
+
     handleTypeIsChosen = (type) => {
         let inputType = type;
         this.setState({ isChosen: inputType });
@@ -36,7 +41,8 @@ class Options extends React.Component {
             { type: 'textarea' },
             { type: 'file' }
         ];
-        const title = 'Please, choose one of input types:';
+        const titleForm = 'Please, enter form\'s name';
+        const titleType = 'Please, choose one of input types:';
         const typesFilter = dataTypes.map(item => <Type
                                                 key={item.type}
                                                 typeName={item.type}
@@ -52,7 +58,13 @@ class Options extends React.Component {
         return (
             <div className={styles.options}>
                 <h4 className={styles.options__title}>
-                    { title }
+                    { titleForm }
+                </h4>
+                <div className={styles.options__input}>
+                    <input onChange={this.handleChangeNameForm} type="text"/>
+                </div>
+                <h4 className={styles.options__title}>
+                    { titleType }
                 </h4>
                 <div className={styles.options__filter}>
                     { typesFilter }

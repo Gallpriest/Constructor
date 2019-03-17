@@ -8,6 +8,7 @@ class Application extends React.Component {
     super(props);
 
     this.state = {
+      formName: '',
       newInput: {
         type: null,
         name: null,
@@ -20,17 +21,22 @@ class Application extends React.Component {
     }
   }
 
+  handleChangeNameForm = (formName) => {
+    this.setState({
+      formName
+    })
+  }
+
   handleInputType = (type) => {
     let inputType = this.state.newInput = { type: type };
-    this.setState({ newInput: inputType });
+    this.setState({ inputType });
   }
 
   transferPrametersData = (inputData) => {
-    let name = inputData.name;
     this.setState({
       newInput: {
         type: this.state.newInput.type,
-        name: name,
+        name: inputData.name,
         placeholder: inputData.placeholder,
         numberOptions: inputData.numberOptions,
         options: inputData.options,
@@ -45,6 +51,7 @@ class Application extends React.Component {
       this.setState(prevState => ({
         inputsArray: prevState.inputsArray.concat(addedInput),
         newInput: {
+          type: null,
           name: null,
           placeholder: null,
           numberOptions: null,
@@ -62,8 +69,10 @@ class Application extends React.Component {
           handleInputType={this.handleInputType} 
           transferPrametersData={this.transferPrametersData}
           handleClickAddInput={this.handleClickAddInput}
+          handleChangeNameForm={this.handleChangeNameForm}
         />
         <Questionnaire
+          formName={this.state.formName}
           inputDataFlow={this.state.newInput}
           inputsCollection={this.state.inputsArray}
         />

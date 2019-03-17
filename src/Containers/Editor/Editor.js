@@ -16,13 +16,18 @@ class Editor extends React.Component {
     this.props.handleClickAddInput(added);
   }
 
+  handleChangeNameForm = (formName) => {
+    this.props.handleChangeNameForm(formName)
+  }
+
   render() {
     return (
       <section className={styles.editor}>
-        <Tools 
+        <Tools
           handleInputType={this.handleInputType} 
           transferPrametersData={this.transferPrametersData}
           handleClickAddInput={this.handleClickAddInput}
+          handleChangeNameForm={this.handleChangeNameForm}
         />
       </section>
     )

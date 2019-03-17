@@ -4,10 +4,11 @@ import Form from '../../Components/Form/Form';
 
 class Questionnaire extends React.Component {
   render() {
-    const { inputDataFlow, inputsCollection } = this.props;
+    const { inputDataFlow, inputsCollection, formName } = this.props;
     return (
       <section className={styles.questionnaire}>
-        <Form 
+        <Form
+          formName={formName}
           inputDataFlow={inputDataFlow}
           inputsCollection={inputsCollection}
         />

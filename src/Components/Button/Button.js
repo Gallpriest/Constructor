@@ -14,12 +14,13 @@ class Button extends React.Component {
       onClick
     } = this.props;
 
-    
+    let classNames = variants ? `${styles.button} ${styles.button_form}` : styles.button;
+
     return (
-      <button 
+      <button
         type={type}
         onClick={onClick}
-        className={styles.button}>
+        className={classNames}>
         { name }
       </button>
     )

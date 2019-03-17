@@ -18,3 +18,23 @@
     width: 100%;
     flex-wrap: wrap;
 }
+
+.options__input {
+    margin-bottom: var(--big);
+    display: flex;
+}
+
+.options__input input {
+    outline: none;
+    border: 1px solid var(--light-border);
+    padding: 7px;
+    font-size: 16px;
+    width: 100%;
+    color: var(--text-main);
+}
+
+@media (max-width: 767px) {
+    .options__title {
+        font-size: 14px;
+    }
+}

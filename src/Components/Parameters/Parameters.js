@@ -15,7 +15,10 @@ class Parameters extends React.Component {
         this.state = {
             inputSettings: {
                 name: null,
-                placeholder: null
+                placeholder: null,
+                numberOptions: null,
+                options: [],
+                category: null
             }
         }
     }

@@ -7,9 +7,20 @@
 }
 
 .form__wrap {
-    padding: var(--big) var(--big) 30px;
+    padding: var(--big);
     border: 1px solid var(--light-border);
     background: #fff;
     display: flex;
     flex-direction: column;
+}
+
+.form__button {
+    text-align: center;
+    margin-top: var(--small);
+}
+
+.form__name {
+    font-size: 20px;
+    margin-bottom: var(--small);
+    text-align: center;
 }

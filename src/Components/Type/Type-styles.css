@@ -26,3 +26,11 @@
     border: 1px solid var(--peachy);
     color: #fff;
 }
+
+@media (max-width: 767px) {
+    .type {
+        width: 50%;
+        font-size: 12px;
+        line-height: 12px;
+    }
+}

@@ -21,3 +21,10 @@
     text-align: right;
     margin-top: var(--big);
 }
+
+@media (max-width: 767px) {
+    .parameters,
+    .parameters__title {
+        font-size: 14px;
+    }
+}
